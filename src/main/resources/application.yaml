@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: api
+
+  cloud:
+    gateway:
+      routes:
+        - id: faq-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/**  # Adjust the path as needed
+
+server:
+  port: 8080  # The port on which the gateway will run
